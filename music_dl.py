@@ -12,7 +12,7 @@ def fetch_page(url):
     a soup object for working with html.
 
     Parameter:
-    url: URL of the page 
+    url: url of the page 
 
     Return:
     A Soup object for parsing HTML
