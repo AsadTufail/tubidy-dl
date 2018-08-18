@@ -38,7 +38,8 @@ def get_titles(name):
     if soup.find('h4').a:
         if 'No results found.' == soup.find('h4').a.text:
             sys.exit("Your music track is not available")
-    
+    elif "No results found." in soup.find('div', class_="text-center").find('h4').text:
+        sys.exit("Your music track is not available.")
     return [(tracks.parent.get('href'), tracks.parent.text.strip()) for tracks in soup.findAll('h4', class_='media-heading')]
 
 
